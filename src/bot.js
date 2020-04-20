@@ -119,9 +119,26 @@ bot.registerCommand("tft", "@here React ONCE if you're down to play TFT. \n\n Do
 
 //-----------------------------------------------------------------------------------------------------------------------\\
 
+bot.registerCommand(
+    "send",
+    (msg, args) => {
+        if (args.length === 0) {
+            return "Invalid input, send something: '~send <something>'";
+        }
+        const toSend = args.join(" ");
+        console.log(toSend);
+    },
+    {
+        description: "Send something to josh (test command)",
+        fullDescription: "Sends something to josh (test command)",
+        usage: "<text>",
+    }
+);
 
-
-
+bot.registerCommand("code", "https://github.com/kthisisjosh/VentexBot", {
+    description: "View the code of the bot",
+    fullDescription: "View the code of the bot",
+});
 
 //-----------------------------------------------------------------------------------------------------------------------\\
 

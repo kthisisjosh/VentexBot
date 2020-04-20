@@ -13,8 +13,8 @@ const bot = new Eris.CommandClient(
     },
     {
         description: "Ventex Bot",
-        owner: "Simplistics",
-        prefix: ["~", "!"],
+        owner: "<@167039265849475073>",
+        prefix: ["~", "!", "-", "/", "."],
     }
 );
 
@@ -24,9 +24,9 @@ const bot = new Eris.CommandClient(
 
 //-----------------------------------------------------------------------------------------------------------------------\\
 
-bot.registerCommand("rsm", "React (can react multiple times) to get a random screenshot memory from #screenshot-memories.", {
-    description: "Gets a random screenshot memory from the #screenshot-memories channel. Put some in there!",
-    fullDescription: "Gets a random screenshot memory from the #screenshot-memories channel. Put some in there!",
+bot.registerCommand("rsm", "React (can react multiple times) to get a random screenshot memory from <#340703597979500545>", {
+    description: "Gets a random screenshot memory from the <#340703597979500545> channel. Put some in there!",
+    fullDescription: "Gets a random screenshot memory from the <#340703597979500545> channel. Put some in there!",
     caseInsensitive: true,
     reactionButtons: [
         {
@@ -66,8 +66,8 @@ bot.registerCommand(
 
 //-----------------------------------------------------------------------------------------------------------------------\\
 
-bot.registerCommand("Val10Man", "@here React ONCE if you want to play a Valorant 10 man. \n\n Down to play: \n\n", {
-    description: "Will ask mans if they want to play a Valorant 10 man with a @ here.",
+bot.registerCommand("Val10Man", "<@&701890854281019493> **React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n", {
+    description: "Will ask mans if they want to play a Valorant 10 man.",
     fullDescription: "10 man Valorant comp match.",
     caseInsensitive: true,
     reactionButtons: [
@@ -82,7 +82,7 @@ bot.registerCommand("Val10Man", "@here React ONCE if you want to play a Valorant
             emoji: "🔄",
             type: "reset",
             response: () => {
-                return "React ONCE if you want to play a Valorant 10 man. \n\n Down to play: \n\n";
+                return "**React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n";
             },
         },
     ],
@@ -91,8 +91,8 @@ bot.registerCommand("Val10Man", "@here React ONCE if you want to play a Valorant
 
 bot.registerCommandAlias("Valorant10Man", "Val10Man");
 
-bot.registerCommand("Val5Man", "@here React ONCE if you're down to play a Valorant 5 man. \n\n Down to play: \n\n", {
-    description: "Will ask mans if they want to play a Valorant 5 man with a @ here.",
+bot.registerCommand("Val5Man", "<@&701890854281019493> **React ONCE if you're down to play a Valorant 5 man.** \n\n Down to play: \n\n", {
+    description: "Will ask mans if they want to play a Valorant 5 man.",
     fullDescription: "Val 5 man",
     caseInsensitive: true,
     reactionButtons: [
@@ -107,7 +107,7 @@ bot.registerCommand("Val5Man", "@here React ONCE if you're down to play a Valora
             emoji: "🔄",
             type: "reset",
             response: () => {
-                return "React ONCE if you want to play a Valorant 5 man. \n\n Down to play: \n\n";
+                return "**React ONCE if you want to play a Valorant 5 man.** \n\n Down to play: \n\n";
             },
         },
     ],
@@ -116,8 +116,8 @@ bot.registerCommand("Val5Man", "@here React ONCE if you're down to play a Valora
 
 bot.registerCommandAlias("Valorant5Man", "Val5Man");
 
-bot.registerCommand("tft", "@here React ONCE if you're down to play TFT. \n\n Down to play: \n\n", {
-    description: "Will ask mans if they want to play tft with a @ here.",
+bot.registerCommand("tft", "<@&591691622060916736> **React ONCE if you're down to play tft.** \n\n Down to play: \n\n", {
+    description: "Will ask mans if they want to play tft.",
     fullDescription: "tft",
     reactionButtons: [
         {
@@ -131,7 +131,7 @@ bot.registerCommand("tft", "@here React ONCE if you're down to play TFT. \n\n Do
             emoji: "🔄",
             type: "reset",
             response: () => {
-                return "@here React ONCE if you're down to play TFT. \n\n Down to play: \n\n";
+                return "**React ONCE if you're down to play tft.** \n\n Down to play: \n\n";
             },
         },
     ],
@@ -149,9 +149,10 @@ bot.registerCommand(
     (msg, args) => {
         if (args.length === 0) {
             return "Invalid input, send something: '~send <text>'";
+        } else {
+            const toSend = args.join(" ");
+            console.log(toSend);
         }
-        const toSend = args.join(" ");
-        console.log(toSend);
     },
     {
         description: "Send something to josh (test command).",
@@ -160,16 +161,50 @@ bot.registerCommand(
     }
 );
 
-bot.registerCommand("code", "https://github.com/kthisisjosh/VentexBot", {
+bot.registerCommand("code", "<https://github.com/kthisisjosh/VentexBot>", {
     description: "View the code of the bot.",
     fullDescription: "View the code of the bot.",
 });
+
+bot.registerCommand(
+    "embedtest",
+    (msg, args, userID) => {
+        bot.createMessage(msg.channel.id, {
+            embed: {
+                title: "Click for funniest video test",
+                description: "Description test",
+                url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                color: 0x008000,
+                fields: [
+                    {
+                        name: "<@"+userID+">", // Field title
+                        value: "<@"+userID+">", // Field
+                        inline: true, // Whether you want multiple fields in same line
+                    },
+                    {
+                        name: "Test field name 2.",
+                        value: "Test field name 2",
+                        inline: true,
+                    },
+                ],
+                footer: {
+                    // Footer text
+                    text: "Test footer",
+                },
+            },
+        });
+    },
+    {
+        description: "Test embed command",
+        fullDescription: "Test embed command",
+    }
+);
 
 //-----------------------------------------------------------------------------------------------------------------------\\
 
 bot.on("ready", () => {
     bot.editStatus("Available", {
-        name: "Simplistics",
+        name: "Type ~help",
         type: 1,
     });
     console.log("Ready!");

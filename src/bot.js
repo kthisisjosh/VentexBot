@@ -66,7 +66,7 @@ bot.registerCommand(
 
 //-----------------------------------------------------------------------------------------------------------------------\\
 
-bot.registerCommand("Valorant10Man", "@here React ONCE if you want to play a Valorant 10 man. \n\n Down to play: \n\n", {
+bot.registerCommand("Val10Man", "@here React ONCE if you want to play a Valorant 10 man. \n\n Down to play: \n\n", {
     description: "Will ask mans if they want to play a Valorant 10 man with a @ here.",
     fullDescription: "10 man Valorant comp match.",
     caseInsensitive: true,
@@ -89,9 +89,9 @@ bot.registerCommand("Valorant10Man", "@here React ONCE if you want to play a Val
     reactionButtonTimeout: 500000,
 });
 
-bot.registerCommandAlias("val10man", "Valorant10Man");
+bot.registerCommandAlias("Valorant10Man", "Val10Man");
 
-bot.registerCommand("Valorant5Man", "@here React ONCE if you're down to play a Valorant 5 man. \n\n Down to play: \n\n", {
+bot.registerCommand("Val5Man", "@here React ONCE if you're down to play a Valorant 5 man. \n\n Down to play: \n\n", {
     description: "Will ask mans if they want to play a Valorant 5 man with a @ here.",
     fullDescription: "Val 5 man",
     caseInsensitive: true,
@@ -114,7 +114,7 @@ bot.registerCommand("Valorant5Man", "@here React ONCE if you're down to play a V
     reactionButtonTimeout: 500000,
 });
 
-bot.registerCommandAlias("val5man", "Valorant5Man");
+bot.registerCommandAlias("Valorant5Man", "Val5Man");
 
 bot.registerCommand("tft", "@here React ONCE if you're down to play TFT. \n\n Down to play: \n\n", {
     description: "Will ask mans if they want to play tft with a @ here.",

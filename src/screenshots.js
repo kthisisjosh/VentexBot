@@ -84,6 +84,7 @@ const screenshots = {
         "https://cdn.discordapp.com/attachments/340703597979500545/701850769527406612/image0.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/701850862171193434/image0.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/701850251593646101/image0.png",
+        "https://cdn.discordapp.com/attachments/340703597979500545/701907836153626634/unknown.png",
     ],
 };
 

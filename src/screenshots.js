@@ -30,6 +30,7 @@ const screenshots = {
         "https://cdn.discordapp.com/attachments/340703597979500545/340705199620620298/2016-01-01_00002.jpg",
         "https://cdn.discordapp.com/attachments/340703597979500545/340705438117134337/20160722233717_1.jpg",
         "https://cdn.discordapp.com/attachments/340703597979500545/340705616693690380/20160317205910_1.jpg",
+        "https://www.youtube.com/watch?v=SFvt3erODbg&feature=youtu.be",
         "https://cdn.discordapp.com/attachments/340703597979500545/340705763217637377/unknown.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/340705892661985292/20161230134124_1.jpg",
         "its kaizer \n https://cdn.discordapp.com/attachments/340703597979500545/340705950325538828/20160617191130_1.jpg",
@@ -63,6 +64,7 @@ const screenshots = {
         "https://cdn.discordapp.com/attachments/340703597979500545/701582401662615604/unknown.png",
         "holy damn baby lookin hot :eyes: :eyes: \n https://cdn.discordapp.com/attachments/340703597979500545/701605557873803334/mucus.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/701649288891072562/unknown.png",
+        "https://cdn.discordapp.com/attachments/340703597979500545/704185629902110860/unknown.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/701649381639585792/ka.JPG",
         "https://cdn.discordapp.com/attachments/340703597979500545/701698442585571370/image0.jpg",
         "https://cdn.discordapp.com/attachments/340703597979500545/701698644776190032/video0.mov",
@@ -84,6 +86,7 @@ const screenshots = {
         "https://cdn.discordapp.com/attachments/340703597979500545/701850769527406612/image0.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/701850862171193434/image0.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/701850251593646101/image0.png",
+        "https://cdn.discordapp.com/attachments/340703597979500545/705488729577357452/unknown.png \nhttps://cdn.discordapp.com/attachments/340703597979500545/705488729577357452/unknown.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/701907836153626634/unknown.png",
     ],
 };

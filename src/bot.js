@@ -166,6 +166,11 @@ bot.registerCommand("code", "<https://github.com/kthisisjosh/VentexBot>", {
     fullDescription: "View the code of the bot.",
 });
 
+bot.registerCommand("website", "<https://ventexgaming.netlify.app/>", {
+    description: "View VentexGaming's website.",
+    fullDescription: "View VentexGaming's website.",
+});
+
 bot.registerCommand(
     "embedtest",
     (msg, args, userID) => {
@@ -177,8 +182,8 @@ bot.registerCommand(
                 color: 0x008000,
                 fields: [
                     {
-                        name: "<@"+userID+">", // Field title
-                        value: "<@"+userID+">", // Field
+                        name: "<@" + userID + ">", // Field title
+                        value: "<@" + userID + ">", // Field
                         inline: true, // Whether you want multiple fields in same line
                     },
                     {

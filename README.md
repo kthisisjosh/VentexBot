@@ -7,20 +7,29 @@ VentexBot
 
 ## Commands
 
-#### Random Screenshot
+#### Random Screenshot Memory
+```js
+~rsm
+```
+Cycles through a random screenshot saved in the #random-screenshot-memory channel whenver the ♻️ react is clicked.
 
 #### Val10Man / Val5Man
+```js
+~val10man / ~val5man
+```
+Mentions the @Valorant role and displays the username of all those who react to the message.
+#### Example
+<img src="https://github.com/kthisisjosh/readme-assets/blob/master/ventexbot/Val10ManEx.JPG"/>
 
-#### tft
-
-#### Code
-
-#### Website
+#### Tft
+```js
+~tft
+```
+Mentions the @tft role and displays the username of all those who react to the message.
 
 ## Getting Started
 
 #### 1. Get the latest version
-
 
 Start by cloning the latest version on your local machine by running:
 

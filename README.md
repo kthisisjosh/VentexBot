@@ -5,6 +5,18 @@ VentexBot
   A test\for fun discord bot built using <a href="https://abal.moe/Eris/">Eris</a>.
 </p>
 
+## Commands
+
+#### Random Screenshot
+
+#### Val10Man / Val5Man
+
+#### tft
+
+#### Code
+
+#### Website
+
 ## Getting Started
 
 #### 1. Get the latest version

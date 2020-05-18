@@ -6,14 +6,34 @@ VentexBot
 </p>
 
 ## Getting Started
-1. Clone the repo locally
-2. Inside the repo run `npm install`
-3. Create an `auth.json` file in `./src` as described below
-4. Run `nodemon bot.js`
 
-## auth.json example
+#### 1. Get the latest version
+
+
+Start by cloning the latest version on your local machine by running:
+
+```sh
+$ git clone https://github.com/kthisisjosh/VentexBot.git ventexbot
+$ cd ventexbot
+```
+
+#### 2. Install the dependencies
+
+```sh
+$ npm install
+```
+
+#### 3. Create an `auth.json` file in `./src` as described below
+
+##### auth.json example
 ```js
 {
   "token": "<discord bot user token>",
 }
+```
+
+#### 4. Run the bot
+
+```js
+$ nodemon bot.js
 ```

@@ -90,6 +90,13 @@ const screenshots = {
         "https://cdn.discordapp.com/attachments/340703597979500545/701850251593646101/image0.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/705488729577357452/unknown.png \nhttps://cdn.discordapp.com/attachments/340703597979500545/705488729577357452/unknown.png",
         "https://cdn.discordapp.com/attachments/340703597979500545/701907836153626634/unknown.png",
+        "https://cdn.discordapp.com/attachments/340703597979500545/704185629902110860/unknown.png",
+        "https://cdn.discordapp.com/attachments/340703597979500545/705488729577357452/unknown.png",
+        "https://www.youtube.com/watch?v=SFvt3erODbg&feature=youtu.be",
+        "https://media.discordapp.net/attachments/544945894639009804/709542743814176798/unknown.png?width=1052&height=658",
+        "https://cdn.discordapp.com/attachments/167039507663814657/717149180090384464/unknown.png",
+        "https://clips.twitch.tv/YummyAbrasiveSaladKappaPride",
+        "https://cdn.discordapp.com/attachments/260943904394838016/722878776639488030/ramen.png",
     ],
 };
 

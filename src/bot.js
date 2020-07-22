@@ -86,7 +86,7 @@ bot.registerCommand("Val10Man", "<@&701890854281019493> **React ONCE if you want
             },
         },
     ],
-    reactionButtonTimeout: 500000,
+    reactionButtonTimeout: 100000000,
 });
 
 bot.registerCommandAlias("Valorant10Man", "Val10Man");
@@ -111,10 +111,56 @@ bot.registerCommand("Val5Man", "<@&701890854281019493> **React ONCE if you're do
             },
         },
     ],
-    reactionButtonTimeout: 500000,
+    reactionButtonTimeout: 100000000,
 });
 
 bot.registerCommandAlias("Valorant5Man", "Val5Man");
+
+bot.registerCommand("League10Man", "<@&7352965022426071853> **React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n", {
+    description: "Will ask mans if they want to play a League 10 man custom.",
+    fullDescription: "10 man League match.",
+    caseInsensitive: true,
+    reactionButtons: [
+        {
+            emoji: "👍",
+            type: "yes",
+            response: (msg, args, userID) => {
+                return msg.content + "\n" + "<@" + userID + ">";
+            },
+        },
+        {
+            emoji: "🔄",
+            type: "reset",
+            response: () => {
+                return "**React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n";
+            },
+        },
+    ],
+    reactionButtonTimeout: 100000000,
+});
+
+bot.registerCommand("League5Man", "<@&735296502242607185> **React ONCE if you're down to play a League 5 man.** \n\n Down to play: \n\n", {
+    description: "Will ask mans if they want to play a League 5 man.",
+    fullDescription: "League 5 man",
+    caseInsensitive: true,
+    reactionButtons: [
+        {
+            emoji: "👍",
+            type: "yes",
+            response: (msg, args, userID) => {
+                return msg.content + "\n" + "<@" + userID + ">";
+            },
+        },
+        {
+            emoji: "🔄",
+            type: "reset",
+            response: () => {
+                return "**React ONCE if you want to play a League 5 man.** \n\n Down to play: \n\n";
+            },
+        },
+    ],
+    reactionButtonTimeout: 100000000,
+});
 
 bot.registerCommand("tft", "<@&591691622060916736> **React ONCE if you're down to play tft.** \n\n Down to play: \n\n", {
     description: "Will ask mans if they want to play tft.",
@@ -135,7 +181,7 @@ bot.registerCommand("tft", "<@&591691622060916736> **React ONCE if you're down t
             },
         },
     ],
-    reactionButtonTimeout: 500000,
+    reactionButtonTimeout: 100000000,
 });
 
 /**

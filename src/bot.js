@@ -116,7 +116,7 @@ bot.registerCommand("Val5Man", "<@&701890854281019493> **React ONCE if you're do
 
 bot.registerCommandAlias("Valorant5Man", "Val5Man");
 
-bot.registerCommand("League10Man", "<@&7352965022426071853> **React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n", {
+bot.registerCommand("League10Man", "<@&735296502242607185> **React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n", {
     description: "Will ask mans if they want to play a League 10 man custom.",
     fullDescription: "10 man League match.",
     caseInsensitive: true,

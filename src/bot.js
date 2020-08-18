@@ -18,6 +18,8 @@ const bot = new Eris.CommandClient(
     }
 );
 
+let names = []
+
 /**
  * Screenshot-related commands.
  */
@@ -66,6 +68,67 @@ bot.registerCommand(
 
 //-----------------------------------------------------------------------------------------------------------------------\\
 
+bot.registerCommand("reset", "React to reset name cache", {
+    reactionButtons: [
+        {
+            emoji: "🔄",
+            type: "yes",
+            response: (msg, args, userID) => {
+                names = []
+            },
+        },
+    ],
+    reactionButtonTimeout: 5000,
+})
+
+bot.registerCommand("AmongUs", "<@744333040234266694> **React if you want to play Among Us!** \n\n Down to play: \n\n", {
+    description: "Will ask mans if they want to play Among Us.",
+    fullDescription: "Among Us",
+    caseInsensitive: true,
+    reactionButtons: [
+        {
+            emoji: "👍",
+            type: "yes",
+            response: (msg, args, userID) => {
+                let isUnique = true
+                names.forEach(name => {
+                    if (name === userID) {
+                        isUnique = false
+                    }
+                })
+                if (isUnique == true) {
+                    names.push(userID)
+                }
+                let nameOutput = ""
+                names.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React if you want to play Among Us!** \n\n Down to play: \n\n" + nameOutput
+            },
+        },
+        {
+            emoji: "🔄",
+            type: "reset",
+            response: (msg, args, userID) => {
+                let newNames = []
+                names.forEach(name => {
+                    if (name !== userID) {
+                        newNames.push(name)
+                    }
+                })
+                let nameOutput = ""
+                newNames.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React if you want to play Among Us!** \n\n Down to play: \n\n" + nameOutput
+            },
+        },
+    ],
+    reactionButtonTimeout: 100000000,
+});
+
+bot.registerCommandAlias("among", "AmongUs");
+
 bot.registerCommand("Val10Man", "<@&701890854281019493> **React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n", {
     description: "Will ask mans if they want to play a Valorant 10 man.",
     fullDescription: "10 man Valorant comp match.",
@@ -75,14 +138,37 @@ bot.registerCommand("Val10Man", "<@&701890854281019493> **React ONCE if you want
             emoji: "👍",
             type: "yes",
             response: (msg, args, userID) => {
-                return msg.content + "\n" + "<@" + userID + ">";
+                let isUnique = true
+                names.forEach(name => {
+                    if (name === userID) {
+                        isUnique = false
+                    }
+                })
+                if (isUnique == true) {
+                    names.push(userID)
+                }
+                let nameOutput = ""
+                names.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
             emoji: "🔄",
             type: "reset",
-            response: () => {
-                return "**React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n";
+            response: (msg, args, userID) => {
+                let newNames = []
+                names.forEach(name => {
+                    if (name !== userID) {
+                        newNames.push(name)
+                    }
+                })
+                let nameOutput = ""
+                newNames.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n" + nameOutput
             },
         },
     ],
@@ -100,14 +186,37 @@ bot.registerCommand("Val5Man", "<@&701890854281019493> **React ONCE if you're do
             emoji: "👍",
             type: "yes",
             response: (msg, args, userID) => {
-                return msg.content + "\n" + "<@" + userID + ">";
+                let isUnique = true
+                names.forEach(name => {
+                    if (name === userID) {
+                        isUnique = false
+                    }
+                })
+                if (isUnique == true) {
+                    names.push(userID)
+                }
+                let nameOutput = ""
+                names.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React ONCE if you're down to play a Valorant 5 man.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
             emoji: "🔄",
             type: "reset",
-            response: () => {
-                return "**React ONCE if you want to play a Valorant 5 man.** \n\n Down to play: \n\n";
+            response: (msg, args, userID) => {
+                let newNames = []
+                names.forEach(name => {
+                    if (name !== userID) {
+                        newNames.push(name)
+                    }
+                })
+                let nameOutput = ""
+                newNames.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React ONCE if you want to play a Valorant 5 man.** \n\n Down to play: \n\n" + nameOutput;
             },
         },
     ],
@@ -125,14 +234,37 @@ bot.registerCommand("League10Man", "<@&735296502242607185> **React ONCE if you w
             emoji: "👍",
             type: "yes",
             response: (msg, args, userID) => {
-                return msg.content + "\n" + "<@" + userID + ">";
+                let isUnique = true
+                names.forEach(name => {
+                    if (name === userID) {
+                        isUnique = false
+                    }
+                })
+                if (isUnique == true) {
+                    names.push(userID)
+                }
+                let nameOutput = ""
+                names.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
             emoji: "🔄",
             type: "reset",
-            response: () => {
-                return "**React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n";
+            response: (msg, args, userID) => {
+                let newNames = []
+                names.forEach(name => {
+                    if (name !== userID) {
+                        newNames.push(name)
+                    }
+                })
+                let nameOutput = ""
+                newNames.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n" + nameOutput;
             },
         },
     ],
@@ -148,14 +280,37 @@ bot.registerCommand("League5Man", "<@&735296502242607185> **React ONCE if you're
             emoji: "👍",
             type: "yes",
             response: (msg, args, userID) => {
-                return msg.content + "\n" + "<@" + userID + ">";
+                let isUnique = true
+                names.forEach(name => {
+                    if (name === userID) {
+                        isUnique = false
+                    }
+                })
+                if (isUnique == true) {
+                    names.push(userID)
+                }
+                let nameOutput = ""
+                names.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React ONCE if you're down to play a League 5 man.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
             emoji: "🔄",
             type: "reset",
-            response: () => {
-                return "**React ONCE if you want to play a League 5 man.** \n\n Down to play: \n\n";
+            response: (msg, args, userID) => {
+                let newNames = []
+                names.forEach(name => {
+                    if (name !== userID) {
+                        newNames.push(name)
+                    }
+                })
+                let nameOutput = ""
+                newNames.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React ONCE if you want to play a League 5 man.** \n\n Down to play: \n\n" + nameOutput;
             },
         },
     ],
@@ -170,14 +325,38 @@ bot.registerCommand("tft", "<@&591691622060916736> **React ONCE if you're down t
             emoji: "👍",
             type: "yes",
             response: (msg, args, userID) => {
-                return msg.content + "\n" + "<@" + userID + ">";
+                let isUnique = true
+                names.forEach(name => {
+                    if (name === userID) {
+                        isUnique = false
+                    }
+                })
+                if (isUnique == true) {
+                    names.push(userID)
+                }
+                let nameOutput = ""
+                names.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+                return "**React ONCE if you're down to play tft.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
             emoji: "🔄",
             type: "reset",
-            response: () => {
-                return "**React ONCE if you're down to play tft.** \n\n Down to play: \n\n";
+            response: (msg, args, userID) => {
+                let newNames = []
+                names.forEach(name => {
+                    if (name !== userID) {
+                        newNames.push(name)
+                    }
+                })
+                let nameOutput = ""
+                newNames.forEach(name => {
+                    nameOutput += "<@" + name + ">" + "\n"
+                })
+
+                return "**React ONCE if you're down to play tft.** \n\n Down to play: \n\n" + nameOutput;
             },
         },
     ],
@@ -255,7 +434,7 @@ bot.registerCommand(
 
 bot.on("ready", () => {
     bot.editStatus("Available", {
-        name: "Type ~help",
+        name: "Type ~help - Ventex Bot :)",
         type: 1,
     });
     console.log("Ready!");

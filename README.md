@@ -17,11 +17,11 @@ VentexBot
 ```
 Cycles through a random screenshot saved in the #random-screenshot-memory channel whenver the ♻️ react is clicked.
 
-#### Val10Man / Val5Man
+#### Val10Man / Val5Man / AmongUs
 ```js
-~val10man / ~val5man
+~val10man / ~val5man / ~amongus
 ```
-Mentions the @Valorant role and displays the username of all those who react to the message.
+Mentions the @Valorant / @AmongUs role and displays the username of all those who react to the message.
 #### Example
 <img src="https://github.com/kthisisjosh/readme-assets/blob/master/ventexbot/Val10ManEx.JPG"/>
 

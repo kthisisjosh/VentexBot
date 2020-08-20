@@ -18,7 +18,12 @@ const bot = new Eris.CommandClient(
     }
 );
 
-let names = []
+let amongUsNames = []
+let valorant5Names = []
+let valorant10Names = []
+let league5names = []
+let league10names = []
+let tftNames = []
 
 /**
  * Screenshot-related commands.
@@ -74,14 +79,19 @@ bot.registerCommand("reset", "React to reset name cache", {
             emoji: "🔄",
             type: "yes",
             response: (msg, args, userID) => {
-                names = []
+                amongUsNames = []
+                valorant5Names = []
+                valorant10Names = []
+                league5names = []
+                league10names = []
+                tftNames = []
             },
         },
     ],
     reactionButtonTimeout: 5000,
 })
 
-bot.registerCommand("AmongUs", "<@744333040234266694> **React if you want to play Among Us!** \n\n Down to play: \n\n", {
+bot.registerCommand("AmongUs", "<@&744333040234266694> **React if you want to play Among Us!** \n\n Down to play: \n\n", {
     description: "Will ask mans if they want to play Among Us.",
     fullDescription: "Among Us",
     caseInsensitive: true,
@@ -91,19 +101,19 @@ bot.registerCommand("AmongUs", "<@744333040234266694> **React if you want to pla
             type: "yes",
             response: (msg, args, userID) => {
                 let isUnique = true
-                names.forEach(name => {
+                amongUsNames.forEach(name => {
                     if (name === userID) {
                         isUnique = false
                     }
                 })
                 if (isUnique == true) {
-                    names.push(userID)
+                    amongUsNames.push(userID)
                 }
                 let nameOutput = ""
-                names.forEach(name => {
+                amongUsNames.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React if you want to play Among Us!** \n\n Down to play: \n\n" + nameOutput
+                return "<@&744333040234266694> **React if you want to play Among Us!** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
@@ -111,7 +121,7 @@ bot.registerCommand("AmongUs", "<@744333040234266694> **React if you want to pla
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
-                names.forEach(name => {
+                amongUsNames.forEach(name => {
                     if (name !== userID) {
                         newNames.push(name)
                     }
@@ -120,7 +130,7 @@ bot.registerCommand("AmongUs", "<@744333040234266694> **React if you want to pla
                 newNames.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React if you want to play Among Us!** \n\n Down to play: \n\n" + nameOutput
+                return "<@&744333040234266694> **React if you want to play Among Us!** \n\n Down to play: \n\n" + nameOutput
             },
         },
     ],
@@ -139,19 +149,19 @@ bot.registerCommand("Val10Man", "<@&701890854281019493> **React ONCE if you want
             type: "yes",
             response: (msg, args, userID) => {
                 let isUnique = true
-                names.forEach(name => {
+                valorant10Names.forEach(name => {
                     if (name === userID) {
                         isUnique = false
                     }
                 })
                 if (isUnique == true) {
-                    names.push(userID)
+                    valorant10Names.push(userID)
                 }
                 let nameOutput = ""
-                names.forEach(name => {
+                valorant10Names.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n" + nameOutput
+                return "<@&701890854281019493> **React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
@@ -159,7 +169,7 @@ bot.registerCommand("Val10Man", "<@&701890854281019493> **React ONCE if you want
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
-                names.forEach(name => {
+                valorant10Names.forEach(name => {
                     if (name !== userID) {
                         newNames.push(name)
                     }
@@ -168,7 +178,7 @@ bot.registerCommand("Val10Man", "<@&701890854281019493> **React ONCE if you want
                 newNames.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n" + nameOutput
+                return "<@&701890854281019493> **React ONCE if you want to play a Valorant 10 man.** \n\n Down to play: \n\n" + nameOutput
             },
         },
     ],
@@ -187,19 +197,19 @@ bot.registerCommand("Val5Man", "<@&701890854281019493> **React ONCE if you're do
             type: "yes",
             response: (msg, args, userID) => {
                 let isUnique = true
-                names.forEach(name => {
+                valorant5Names.forEach(name => {
                     if (name === userID) {
                         isUnique = false
                     }
                 })
                 if (isUnique == true) {
-                    names.push(userID)
+                    valorant5Names.push(userID)
                 }
                 let nameOutput = ""
-                names.forEach(name => {
+                valorant5Names.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React ONCE if you're down to play a Valorant 5 man.** \n\n Down to play: \n\n" + nameOutput
+                return "<@&701890854281019493> **React ONCE if you're down to play a Valorant 5 man.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
@@ -207,7 +217,7 @@ bot.registerCommand("Val5Man", "<@&701890854281019493> **React ONCE if you're do
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
-                names.forEach(name => {
+                valorant5Names.forEach(name => {
                     if (name !== userID) {
                         newNames.push(name)
                     }
@@ -216,7 +226,7 @@ bot.registerCommand("Val5Man", "<@&701890854281019493> **React ONCE if you're do
                 newNames.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React ONCE if you want to play a Valorant 5 man.** \n\n Down to play: \n\n" + nameOutput;
+                return "<@&701890854281019493> **React ONCE if you want to play a Valorant 5 man.** \n\n Down to play: \n\n" + nameOutput;
             },
         },
     ],
@@ -235,19 +245,19 @@ bot.registerCommand("League10Man", "<@&735296502242607185> **React ONCE if you w
             type: "yes",
             response: (msg, args, userID) => {
                 let isUnique = true
-                names.forEach(name => {
+                league10names.forEach(name => {
                     if (name === userID) {
                         isUnique = false
                     }
                 })
                 if (isUnique == true) {
-                    names.push(userID)
+                    league10names.push(userID)
                 }
                 let nameOutput = ""
-                names.forEach(name => {
+                league10names.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n" + nameOutput
+                return "<@&735296502242607185> **React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
@@ -255,7 +265,7 @@ bot.registerCommand("League10Man", "<@&735296502242607185> **React ONCE if you w
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
-                names.forEach(name => {
+                league10names.forEach(name => {
                     if (name !== userID) {
                         newNames.push(name)
                     }
@@ -264,7 +274,7 @@ bot.registerCommand("League10Man", "<@&735296502242607185> **React ONCE if you w
                 newNames.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n" + nameOutput;
+                return "<@&735296502242607185> **React ONCE if you want to play a League 10 man custom match.** \n\n Down to play: \n\n" + nameOutput;
             },
         },
     ],
@@ -281,19 +291,19 @@ bot.registerCommand("League5Man", "<@&735296502242607185> **React ONCE if you're
             type: "yes",
             response: (msg, args, userID) => {
                 let isUnique = true
-                names.forEach(name => {
+                league5names.forEach(name => {
                     if (name === userID) {
                         isUnique = false
                     }
                 })
                 if (isUnique == true) {
-                    names.push(userID)
+                    league5names.push(userID)
                 }
                 let nameOutput = ""
-                names.forEach(name => {
+                league5names.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React ONCE if you're down to play a League 5 man.** \n\n Down to play: \n\n" + nameOutput
+                return "<@&735296502242607185> **React ONCE if you're down to play a League 5 man.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
@@ -301,7 +311,7 @@ bot.registerCommand("League5Man", "<@&735296502242607185> **React ONCE if you're
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
-                names.forEach(name => {
+                league5names.forEach(name => {
                     if (name !== userID) {
                         newNames.push(name)
                     }
@@ -310,7 +320,7 @@ bot.registerCommand("League5Man", "<@&735296502242607185> **React ONCE if you're
                 newNames.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React ONCE if you want to play a League 5 man.** \n\n Down to play: \n\n" + nameOutput;
+                return "<@&735296502242607185> **React ONCE if you want to play a League 5 man.** \n\n Down to play: \n\n" + nameOutput;
             },
         },
     ],
@@ -326,19 +336,19 @@ bot.registerCommand("tft", "<@&591691622060916736> **React ONCE if you're down t
             type: "yes",
             response: (msg, args, userID) => {
                 let isUnique = true
-                names.forEach(name => {
+                tftNames.forEach(name => {
                     if (name === userID) {
                         isUnique = false
                     }
                 })
                 if (isUnique == true) {
-                    names.push(userID)
+                    tftNames.push(userID)
                 }
                 let nameOutput = ""
-                names.forEach(name => {
+                tftNames.forEach(name => {
                     nameOutput += "<@" + name + ">" + "\n"
                 })
-                return "**React ONCE if you're down to play tft.** \n\n Down to play: \n\n" + nameOutput
+                return "<@&591691622060916736> **React ONCE if you're down to play tft.** \n\n Down to play: \n\n" + nameOutput
             },
         },
         {
@@ -346,7 +356,7 @@ bot.registerCommand("tft", "<@&591691622060916736> **React ONCE if you're down t
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
-                names.forEach(name => {
+                tftNames.forEach(name => {
                     if (name !== userID) {
                         newNames.push(name)
                     }
@@ -356,7 +366,7 @@ bot.registerCommand("tft", "<@&591691622060916736> **React ONCE if you're down t
                     nameOutput += "<@" + name + ">" + "\n"
                 })
 
-                return "**React ONCE if you're down to play tft.** \n\n Down to play: \n\n" + nameOutput;
+                return "<@&591691622060916736> **React ONCE if you're down to play tft.** \n\n Down to play: \n\n" + nameOutput;
             },
         },
     ],

@@ -11,6 +11,7 @@
   "license": "MIT",
   "homepage": "https://github.com/kthisisjosh/VentexBot#readme",
   "dependencies": {
+    "dayjs": "^1.9.1",
     "eris": "^0.12.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.3"

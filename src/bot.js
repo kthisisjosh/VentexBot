@@ -1,6 +1,45 @@
+const dayjs = require("dayjs");
 const Eris = require("eris");
 const auth = require("./auth");
 const screenshots = require("./screenshots");
+
+var relativeTime = require('dayjs/plugin/relativeTime')
+var config = {
+    thresholds: [
+    { l: 's', r: 1 },
+    { l: 'm', r: 1 },
+    { l: 'mm', r: 59, d: 'minute' },
+    { l: 'h', r: 1 },
+    { l: 'hh', r: 23, d: 'hour' },
+    { l: 'd', r: 1 },
+    { l: 'dd', r: 200, d: 'day' },
+    { l: 'M', r: 1 },
+    { l: 'MM', r: 11, d: 'month' },
+    { l: 'y' },
+    { l: 'yy', d: 'year' }
+    ]
+}
+dayjs.extend(relativeTime, config)
+
+var updateLocale = require('dayjs/plugin/updateLocale')
+dayjs.extend(updateLocale)
+dayjs.updateLocale("en", {
+    relativeTime: {
+    future: "in %s",
+    past: "%s ago",
+    s: 'a few seconds',
+    m: "a minute",
+    mm: "%d minutes",
+    h: "an hour",
+    hh: "%d hours",
+    d: "a day",
+    dd: "%d days",
+    M: "a month",
+    MM: "%d month",
+    y: "a year",
+    yy: "%d years"
+  }
+})
 
 const bot = new Eris.CommandClient(
     auth.token,
@@ -24,6 +63,8 @@ let valorant10Names = []
 let league5names = []
 let league10names = []
 let tftNames = []
+
+var day = dayjs("2020-12-23T00:00:00-05:00")
 
 /**
  * Screenshot-related commands.
@@ -395,6 +436,21 @@ bot.registerCommand(
         usage: "<text>",
     }
 );
+
+bot.registerCommand("fml", "Hang in there! You've got about "+ dayjs().to(day, true) + " until this is all over. <:PepeHands:713964579209871401> <:ResidentSleeper:230457186818457602> <:Jerome:704531259971338271> ", {
+    description: "FML",
+    fullDescription: "FML",
+    reactionButtons: [
+        {
+            emoji: "😢",
+            type: "yes",
+            response: (msg, args, userID) => {
+                return;
+            },
+        },
+    ],
+    reactionButtonTimeout: 100000000,
+});
 
 bot.registerCommand("code", "<https://github.com/kthisisjosh/VentexBot>", {
     description: "View the code of the bot.",

@@ -64,8 +64,6 @@ let league5names = []
 let league10names = []
 let tftNames = []
 
-var day = dayjs("2020-12-23T00:00:00-05:00")
-
 /**
  * Screenshot-related commands.
  */
@@ -437,7 +435,7 @@ bot.registerCommand(
     }
 );
 
-bot.registerCommand("fml", "Hang in there! You've got about "+ dayjs().to(day, true) + " until this is all over. <:PepeHands:713964579209871401> <:ResidentSleeper:230457186818457602> <:Jerome:704531259971338271> ", {
+bot.registerCommand("fml", "Hang in there! You've got about "+ dayjs().to(dayjs("2020-12-23T00:00:00-05:00"), true) + " until this is all over. <:PepeHands:713964579209871401> <:ResidentSleeper:230457186818457602> <:Jerome:704531259971338271> ", {
     description: "FML",
     fullDescription: "FML",
     reactionButtons: [

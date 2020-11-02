@@ -1,5 +1,6 @@
 config.json
 auth.js
+screenshots.js
 
 # Logs
 logs
@@ -59,3 +60,4 @@ typings/
 
 # dotenv environment variables file
 .env
+src/screenshots.js

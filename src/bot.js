@@ -113,6 +113,7 @@ bot.registerCommand(
 //-----------------------------------------------------------------------------------------------------------------------\\
 
 bot.registerCommand("reset", "React to reset name cache", {
+    description: "Resets the name cache.",
     reactionButtons: [
         {
             emoji: "🔄",
@@ -156,7 +157,7 @@ bot.registerCommand("AmongUs", "<@&744333040234266694> **React if you want to pl
             },
         },
         {
-            emoji: "🔄",
+            emoji: "❌",
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
@@ -204,7 +205,7 @@ bot.registerCommand("Val10Man", "<@&701890854281019493> **React ONCE if you want
             },
         },
         {
-            emoji: "🔄",
+            emoji: "❌",
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
@@ -252,7 +253,7 @@ bot.registerCommand("Val5Man", "<@&701890854281019493> **React ONCE if you're do
             },
         },
         {
-            emoji: "🔄",
+            emoji: "❌",
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
@@ -300,7 +301,7 @@ bot.registerCommand("League10Man", "<@&735296502242607185> **React ONCE if you w
             },
         },
         {
-            emoji: "🔄",
+            emoji: "❌",
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
@@ -346,7 +347,7 @@ bot.registerCommand("League5Man", "<@&735296502242607185> **React ONCE if you're
             },
         },
         {
-            emoji: "🔄",
+            emoji: "❌",
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
@@ -391,7 +392,7 @@ bot.registerCommand("tft", "<@&591691622060916736> **React ONCE if you're down t
             },
         },
         {
-            emoji: "🔄",
+            emoji: "❌",
             type: "reset",
             response: (msg, args, userID) => {
                 let newNames = []
@@ -435,7 +436,7 @@ bot.registerCommand(
     }
 );
 
-bot.registerCommand("fml", "Hang in there! You've got about "+ dayjs().to(dayjs("2020-12-23T00:00:00-05:00"), true) + " until this is all over. <:PepeHands:713964579209871401> <:ResidentSleeper:230457186818457602> <:Jerome:704531259971338271> ", {
+bot.registerCommand("fml", "Hang in there! You've got about "+ dayjs().to(dayjs("2020-12-23T00:00:00-05:00"), true) + " until this is all over. <:neckrope:762813873614749747> <:PepeHands:713964579209871401> <:Kaizer:230460817227644938> <:Jerome:704531259971338271> <:deadchromosome:367460111800860692> <:SeemsGood:321103114486677504> <:danielhoe:575898686224334868> <:ugly:458085989169233921> <:sendhelp:575899004924198942> ", {
     description: "FML",
     fullDescription: "FML",
     reactionButtons: [
@@ -498,7 +499,7 @@ bot.registerCommand(
 
 bot.on("ready", () => {
     bot.editStatus("Available", {
-        name: "Type ~help - Ventex Bot :)",
+        name: "~help - Ventex Bot :)",
         type: 1,
     });
     console.log("Ready!");

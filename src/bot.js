@@ -4,6 +4,7 @@ const auth = require("./auth");
 const screenshots = require("./screenshots");
 
 var relativeTime = require('dayjs/plugin/relativeTime')
+var isBetween = require("dayjs/plugin/isBetween")
 var config = {
     thresholds: [
     { l: 's', r: 1 },
@@ -20,6 +21,7 @@ var config = {
     ]
 }
 dayjs.extend(relativeTime, config)
+dayjs.extend(isBetween)
 
 var updateLocale = require('dayjs/plugin/updateLocale')
 dayjs.extend(updateLocale)
@@ -436,20 +438,17 @@ bot.registerCommand(
     }
 );
 
-bot.registerCommand("fml", "Hang in there! You've got about "+ dayjs().to(dayjs("2020-12-23T00:00:00-05:00"), true) + " until this is all over. <:neckrope:762813873614749747> <:PepeHands:713964579209871401> <:Kaizer:230460817227644938> <:Jerome:704531259971338271> <:deadchromosome:367460111800860692> <:SeemsGood:321103114486677504> <:danielhoe:575898686224334868> <:ugly:458085989169233921> <:sendhelp:575899004924198942> ", {
-    description: "FML",
-    fullDescription: "FML",
-    reactionButtons: [
-        {
-            emoji: "😢",
-            type: "yes",
-            response: (msg, args, userID) => {
-                return;
-            },
-        },
-    ],
-    reactionButtonTimeout: 100000000,
-});
+bot.on("messageCreate", (msg) => {
+    if (msg.content === "!fml") {
+        if (dayjs(dayjs()).isBefore(dayjs("2020-12-23"))) {
+            bot.createMessage(msg.channel.id, "Hang in there! You've got about "+ dayjs().to(dayjs("2020-12-23T00:00:00-05:00"), true) + " until this is all over. <:neckrope:762813873614749747> <:PepeHands:713964579209871401> <:Kaizer:230460817227644938> <:Jerome:704531259971338271> <:deadchromosome:367460111800860692> <:SeemsGood:321103114486677504> <:danielhoe:575898686224334868> <:ugly:458085989169233921> <:sendhelp:575899004924198942> ")
+        } else if (dayjs(dayjs()).isBetween("2020-12-12", dayjs("2021-01-12"))) {
+            bot.createMessage(msg.channel.id, "Congratulations! You've made it! <:Pog:478592701915332609> <:marcusgasm:575898575410561024> <:EZ:713964592962994268> <:5Head:737008087847796858> <a:Clap:713964562910674994> You've got about " + dayjs().to(dayjs("2021-01-11T00:00:00-05:00"), true) + " to reset and charge your batteries for next term.")
+        } else if (dayjs(dayjs()).isAfter(dayjs("2021-01-12"))) {
+            bot.createMessage(msg.channel.id, "Hang in there! You've got about "+ dayjs().to(dayjs("2021-04-24T00:00:00-05:00"), true) + " until this is all over. <:neckrope:762813873614749747> <:PepeHands:713964579209871401> <:Kaizer:230460817227644938> <:Jerome:704531259971338271> <:deadchromosome:367460111800860692> <:SeemsGood:321103114486677504> <:danielhoe:575898686224334868> <:ugly:458085989169233921> <:sendhelp:575899004924198942> ")
+        }
+    }
+})
 
 bot.registerCommand("code", "<https://github.com/kthisisjosh/VentexBot>", {
     description: "View the code of the bot.",

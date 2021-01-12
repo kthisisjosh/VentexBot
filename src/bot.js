@@ -440,12 +440,16 @@ bot.registerCommand(
 
 bot.on("messageCreate", (msg) => {
     if (msg.content === "!fml") {
-        if (dayjs(dayjs()).isBefore(dayjs("2020-12-23"))) {
-            bot.createMessage(msg.channel.id, "Hang in there! You've got about "+ dayjs().to(dayjs("2020-12-23T00:00:00-05:00"), true) + " until this is all over. <:neckrope:762813873614749747> <:PepeHands:713964579209871401> <:Kaizer:230460817227644938> <:Jerome:704531259971338271> <:deadchromosome:367460111800860692> <:SeemsGood:321103114486677504> <:danielhoe:575898686224334868> <:ugly:458085989169233921> <:sendhelp:575899004924198942> ")
-        } else if (dayjs(dayjs()).isBetween("2020-12-12", dayjs("2021-01-10"))) {
-            bot.createMessage(msg.channel.id, "Congratulations! You've made it! <:Pog:478592701915332609> <:marcusgasm:575898575410561024> <:EZ:713964592962994268> <:5Head:737008087847796858> <a:Clap:713964562910674994> You've got about " + dayjs().to(dayjs("2021-01-11T00:00:00-05:00"), true) + " to reset and charge your batteries for next term.")
-        } else if (dayjs(dayjs()).isAfter(dayjs("2021-01-10"))) {
-            bot.createMessage(msg.channel.id, "Hang in there! You've got about "+ dayjs().to(dayjs("2021-04-24T00:00:00-05:00"), true) + " until this is all over. <:neckrope:762813873614749747> <:PepeHands:713964579209871401> <:Kaizer:230460817227644938> <:Jerome:704531259971338271> <:deadchromosome:367460111800860692> <:SeemsGood:321103114486677504> <:danielhoe:575898686224334868> <:ugly:458085989169233921> <:sendhelp:575899004924198942> ")
+        if (dayjs(dayjs()).isBetween("2021-01-10", dayjs("2021-04-10"))) {
+            bot.createMessage(msg.channel.id, "Hang in there! You've got " + dayjs().to(dayjs("2021-04-23T00:00:00-05:00"), true) + " until this is all over and about " + dayjs().to(dayjs("2021-04-09T00:00:00-05:00"), true) + " until the start of exams. <:neckrope:762813873614749747> <:PepeHands:713964579209871401> <:Kaizer:230460817227644938> <:Jerome:704531259971338271> <:deadchromosome:367460111800860692> <:SeemsGood:321103114486677504> <:danielhoe:575898686224334868> <:ugly:458085989169233921> <:sendhelp:575899004924198942> ")
+        } else if (dayjs(dayjs()).isBetween("2021-04-09", dayjs("2021-04-24"))) {
+            bot.createMessage(msg.channel.id, "Hang in there! You've got " + dayjs().to(dayjs("2021-04-23T00:00:00-05:00"), true) + " until exams are over. <:neckrope:762813873614749747> <:PepeHands:713964579209871401> <:Kaizer:230460817227644938> <:Jerome:704531259971338271> <:deadchromosome:367460111800860692> <:SeemsGood:321103114486677504> <:danielhoe:575898686224334868> <:ugly:458085989169233921> <:sendhelp:575899004924198942> ")
+        } else if (dayjs(dayjs()).isBetween("2021-04-23", dayjs("2021-05-04"))) {
+            bot.createMessage(msg.channel.id, "Congratulations! You've finished your first year! <:Pog:478592701915332609> <:marcusgasm:575898575410561024> <:EZ:713964592962994268> <:5Head:737008087847796858> <a:Clap:713964562910674994> You've got " + dayjs().to(dayjs("2021-05-03T00:00:00-05:00"), true) + " until Spring term or " + dayjs().to(dayjs("2021-09-08T00:00:00-05:00")) + " until the start of the new school year!")
+        } else if (dayjs(dayjs()).isBetween("2021-05-03", dayjs("2021-08-21"))) {
+            bot.createMessage(msg.channel.id, "Hang in there! You've got " + dayjs().to(dayjs("2021-08-21T00:00:00-05:00"), true) + " until the term or co-op is over. <:neckrope:762813873614749747> <:PepeHands:713964579209871401> <:Kaizer:230460817227644938> <:Jerome:704531259971338271> <:deadchromosome:367460111800860692> <:SeemsGood:321103114486677504> <:danielhoe:575898686224334868> <:ugly:458085989169233921> <:sendhelp:575899004924198942> ")
+        } else {
+            bot.createMessage(msg.channel.id, "Congratulations! You've finished your first year! <:Pog:478592701915332609> <:marcusgasm:575898575410561024> <:EZ:713964592962994268> <:5Head:737008087847796858> <a:Clap:713964562910674994> You've got " + dayjs().to(dayjs("2021-09-08T00:00:00-05:00")) + " until the start of the new school year!")
         }
     }
 })

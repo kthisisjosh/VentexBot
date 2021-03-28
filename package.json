@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "VentexGaming discord bot built using [eris](https://github.com/abalabahaha/eris)",
   "main": "bot.js",
+  "scripts": {
+    "start": "node ./src/bot.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kthisisjosh/VentexBot.git"
